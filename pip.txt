@@ -1,0 +1,7 @@
+Requirement already satisfied: Django in c:\users\patrick\appdata\local\programs\python\python36-32\lib\site-packages
+Requirement already satisfied: pytz in c:\users\patrick\appdata\local\programs\python\python36-32\lib\site-packages (from Django)
+
+pip list gives verisions in a "program (version#)" format
+pip freeze gives versions in a "program==version#" format
+
+pip freeze > requirements.txt creates a txt file with all the freeze formated requirements

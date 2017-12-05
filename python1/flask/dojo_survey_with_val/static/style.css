@@ -1,0 +1,14 @@
+#wrapper {
+    padding: 1%;
+    border: 2px solid black;
+}
+.block {
+    display: inline-block;
+}
+.left {
+    align-content: left;
+    vertical-align: top;
+}
+.right {
+    align-content: right;
+}

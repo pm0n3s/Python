@@ -1,0 +1,37 @@
+<html>
+    <head>
+      <!-- linking direct from static folder -->
+
+      <!-- linking a css style sheet -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style_sheet.css') }}">
+      <!-- linking a javascript file -->
+      <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
+      <!-- linking an image -->
+      <img src="{{ url_for('static', filename='my_img.png') }}">
+
+      <!-- linkning from a subfolder in static folder -->
+
+      <!-- linking a css style sheet -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style_sheet.css') }}">
+      <!-- linking a javascript file -->
+      <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+      <!-- linking an image -->
+      <img src="{{ url_for('static', filename='img/my_img.png') }}">
+      
+    </head>
+    <body>
+      <p>Hello Flask!</p>
+      <p>My name is {{name}}</p>
+      <h3>My first flask template with embedded python</h3>
+
+      <p>Phrase: {{ phrase }}</p>
+
+      <p>Times: {{ times }}</p>
+
+      {% for x in range(0,times): %}
+        <p>{{ phrase }}</p>
+      {% endfor %}
+
+      <a href="/success">Click here to route to success</a>
+    </body>
+</html>

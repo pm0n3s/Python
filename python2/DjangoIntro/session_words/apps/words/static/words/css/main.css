@@ -1,0 +1,12 @@
+#left, #right {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+}
+#left label {
+    display: block;
+}
+.big{
+    font-size: 32px;
+}

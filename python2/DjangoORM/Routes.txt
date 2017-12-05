@@ -1,0 +1,51 @@
+Routes:
+
+- index method -
+(GET) /users - get all users.
+This will need a template.
+
+	mySQL - SELECT * FROM users
+	django- User.objects.all()
+
+- new method -
+(GET) /users/new - form allowing create new user.
+This will need a template.
+
+	display form
+
+- create method -
+(POST) /users/create - insert new user record into our database.
+sent from the form on page /users/new. Redirect to /users/<id> once created.
+
+	mySQL - INSERT INTO users(column1) VALUES (value1)
+	django- User.objects.create(column1 = value1)
+
+- show method -
+(GET) /users/<id> - info for a particular user.
+This will need a template.
+
+	mySQL - SELECT * FROM users WHERE id = <id>
+	django- User.objects.get(id=<id>)
+
+- edit method -
+(GET) /users/<id>/edit - form allowing user to edit existing user.
+This will need a template.
+
+	mySQL - SELECT * FROM users WHERE id = <id>
+	django- User.objects.get(id=<id>)
+
+- update method -
+(POST) /users/<id> - process submitted form sent from /users/<id>/edit.
+Redirect to /users/<id> once updated.
+
+	mySQL - UPDATE users column1 = value1 WHERE id = <id>
+	django- user = User.objects.get(id=<id>)
+			user.column1 = value 1
+			user.save()
+
+- destroy method -
+(GET) /users/<id>/destroy - remove a user with the given id.
+redirect back to /users once deleted.
+	
+	mySQL - DELETE FROM users WHERE id = <id>
+	django- User.objects.delete(id=<id>)

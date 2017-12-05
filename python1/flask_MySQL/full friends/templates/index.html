@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Full Friends</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if users %}
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <form action="/friends/{{ user.id }}/edit">
+                                <button type="submit">Edit</button>
+                            </form>
+                            <form action="friends/{{ user.id }}/delete", method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <form action="/friends" method="post">
+        <h1>Add friend</h1>
+        <label for="first_name">First name:</label>
+        <input type="text" name="first_name">
+        <label for="last_name">Last name:</label>
+        <input type="text" name="last_name">
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+        <button type="submit">Add Friend</button>
+    </form>
+</body>
+</html>

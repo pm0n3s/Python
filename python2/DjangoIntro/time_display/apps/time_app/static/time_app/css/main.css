@@ -1,0 +1,14 @@
+#top {
+    border: black 2px solid;
+    padding: 14px;
+    width: fit-content;
+    margin: auto;
+}
+#bottom {
+    border: black 2px solid;
+    padding: 14px 140px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 35px;
+    text-align: center;
+}

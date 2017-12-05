@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="text" name="name" placeholder="enter your name">
+        <input type="text" name="friends" placeholder="unique friend's name">
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">back home</a>
+    <a href="/ninjas">learn about ninjas</a>
+    <img src="{{ url_for('static', filename='img/Hatajiro_Dojo.jpg') }}">
+</body>
+</html>

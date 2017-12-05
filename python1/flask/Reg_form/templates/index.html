@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg form</title>
+</head>
+<body>
+    <div id="wrapper">
+        {% with messages = get_flashed_messages() %}
+            {% if messages%}
+                {% for message in messages%}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/process" method="post">
+            email: <input type="text" name="email">
+            first name: <input type="text" name="first_name">
+            last name: <input type="text" name="last_name">
+            password: <input type="password" name="password">
+            confirm password: <input type="password" name="confirm_password">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great # Game</title>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <form action="/reset" method="post">
+        <h2>{{ session.guess }} is correct!!</h2>
+        <button type="submit">Play again</button>
+    </form>
+</body>
+</html>

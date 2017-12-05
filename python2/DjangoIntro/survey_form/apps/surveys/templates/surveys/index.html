@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'surveys/css/main.css' %}">
+    <title>Survey</title>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="/process" method="post">
+            {% csrf_token %}
+            <div class="block">
+                <label for="name" class="left">Your name:</label>
+                <input type="text" name="name" class="right">
+            </div>
+            <div class="block">
+                <label for="location" class="left">Your Dojo:</label>
+                <select name="location" class="right">
+                    <option value="online">Online</option>
+                    <option value="sanjose">San Jose</option>
+                    <option value="seattle">Seattle</option>
+                    <option value="losangeles">Los Angeles</option>
+                    <option value="dallas">Dallas</option>
+                    <option value="dc">Washington D.C.</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="tulsa">Tulsa</option>
+                </select>
+            </div>
+            <div class="block">
+                <label for="language" class="left">Favorite Language:</label>
+                <select name="language" class="right">
+                    <option value="python">Python</option>
+                    <option value="javascsript">JavaScript</option>
+                    <option value="c++">C++</option>
+                    <option value="java">Java</option>
+                    <option value="go">Go</option>
+                </select>
+            </div>
+            <div class="block">
+                <label for="comment" class="left">Comment (optional):</label>
+                <textarea name="comment" class="right" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

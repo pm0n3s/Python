@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ninja Gold, Django</title>
+</head>
+<body>
+    <p>Your Gold: {{ request.session.gold }}</p>
+    <div class="form">
+        <h1>Farm</h1>
+        <p>(earns 10-20 gold)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="farm">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="form">
+        <h1>Cave</h1>
+        <p>(earns 5-10 gold)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="cave">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="form">
+        <h1>House</h1>
+        <p>(earns 2-5 gold)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="house">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="form">
+        <h1>Casino</h1>
+        <p>(earns/takes 0-50 gold)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="casino">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <p>Activities:</p>
+    <div id="activities">
+    {% for activity in request.session.activity %}
+        <p>{{ activity }}</p>
+    {% endfor %}
+    </div>
+
+</body>
+</html>

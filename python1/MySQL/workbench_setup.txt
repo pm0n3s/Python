@@ -1,0 +1,8 @@
+mysqld --install
+mysqld --initialize-insecure
+NET START MYSQL
+mysql -u root
+SET PASSWORD for root@'localhost' = PASSWORD('pass');
+\q
+
+USE twitter
